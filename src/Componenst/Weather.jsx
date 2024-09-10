@@ -1,8 +1,8 @@
-import sun from "../assets/Assets/clear.png";
+import sun from "../assets/Assets/sunny.png";
 import drizzle from "../assets/Assets/drizzle.png";
 import rain from "../assets/Assets/rain.png";
 import clouds from "../assets/Assets/cloud.png";
-import moonCLoud from "../assets/Assets/moonClouds.png";
+import moonCLoud from "../assets/Assets/nightClouds.png";
 import snow from "../assets/Assets/snow.png";
 import { useState } from "react";
 import thunderstorm from "../assets/Assets/storm.png";
@@ -78,13 +78,11 @@ const Weather = () => {
       setSearch("");
       console.log(result);
       setLoader(false);
-      
     } catch (e) {
-      console.error("Error fetching weather result", e);
+      alert(`${ search } is not exist`, e);
     }
   };
 
-  // get sunrise and sunset time
   return (
     <div className="weather">
       <Header setSearch={setSearch} onHandleSearch={handleSearch} />
@@ -92,11 +90,11 @@ const Weather = () => {
         <Loader/>
         ) : weatherData ? (
           <WeatherBody weatherData={weatherData} />
-        ) : (
+        ) :  (
           <div className="alert">
-            <Alert variant="dark">Please Enter City Name </Alert>
+            <Alert variant="success">Enter City name </Alert>
           </div>
-        )}
+        )} 
     </div>
   );
 };
