@@ -1,14 +1,12 @@
 import "./App.css";
+import BgVideo from "./Componenst/BgVideo";
 import Weather from "./Componenst/Weather";
-import moduleName from './assets/Assets/bg.mp4'
 
 function App() {
-  return (
+  return ( 
     <>
       <div className="app">
-        <video autoPlay muted loop id="myVideo">
-          <source src={moduleName } type="video/mp4" />
-        </video>
+        <BgVideo/>
         <Weather />
       </div>
     </>

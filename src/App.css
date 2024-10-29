@@ -293,4 +293,8 @@ circle {
   .mobile-weather h3 {
     color: #ebfffc;
   }
+
+  .mobile-weather h3 {
+    margin: 0 1rem;
+  }
 }
