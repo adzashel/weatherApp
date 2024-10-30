@@ -6,6 +6,12 @@ const Header = ({ setSearch , onHandleSearch }) => {
           type="text"
           placeholder="Enter city name..."
           onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              onHandleSearch();
+              e.preventDefault();
+            }
+          }}
         />
         <img src={searchIcon} alt="" onClick={ onHandleSearch } />
       </div>
