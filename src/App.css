@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-#root {
-  margin: 0 auto;
-  padding: 2rem;
+.icon-wrapper {
   text-align: center;
+  margin-right: 2rem;
+}
+
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(80, 35, 217) 11.2%,
+    rgb(217, 35, 189) 91.1%
+  );
 }
 
 * {
@@ -19,10 +26,9 @@
   margin-bottom: 3rem;
 }
 
-.mobile-temp  {
+.mobile-temp {
   visibility: hidden;
 }
-
 
 .aside-weather .sunrise {
   width: 80px;
@@ -53,6 +59,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 1rem;
 }
 
 .alert {
@@ -100,7 +107,6 @@
   font-size: 2rem;
 }
 
-
 .temp {
   margin-top: 1rem;
   font-size: 3rem;
@@ -109,14 +115,6 @@
 .sunrise img {
   width: 70px;
   height: 80px;
-}
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
 }
 
 /* From Uiverse.io by barisdogansutcu */
@@ -171,9 +169,15 @@ circle {
   }
 
 
+
+  .icon-wrapper {
+    margin-bottom: -2rem;
+    text-align: center;
+  }
+
   .icon-wrapper h1 {
     font-size: 1rem;
-    margin-bottom: -1rem ;
+    margin-bottom: -1rem;
   }
 
   .icon-wrapper h4 {
@@ -183,8 +187,9 @@ circle {
     font-size: 2.5rem;
     margin-top: 1rem;
   }
+
   .aside-weather {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   .aside {
@@ -197,7 +202,7 @@ circle {
     font-size: 15px;
   }
 
- .aside-weather .sunrise {
+  .aside-weather .sunrise {
     width: 35px;
     height: 35px;
   }
@@ -205,7 +210,7 @@ circle {
   .sunrise-aside p {
     font-size: 14px;
     margin-bottom: 5px;
-  } 
+  }
 
   .feel {
     font-size: 10px;
@@ -229,8 +234,33 @@ circle {
 /* query for phones */
 
 @media only screen and (max-width: 767px) {
+  body {  
+    background: #9013fe !important;
+  }
+
+  .aside-weather {
+    margin-left: 3rem;
+    padding-top: 0;
+    margin-bottom: -2rem;
+  }
+
+  .icon-wrapper {
+    margin-left: 5.5rem;
+  }
+
   .weather {
     margin-left: -2rem;
+  }
+
+  .search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4rem;
+  }
+
+  .alert {
+    margin-left: 1rem ;
   }
 
   .search-box input {

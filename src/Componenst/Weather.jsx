@@ -53,14 +53,18 @@ const Weather = () => {
 
   // fetch api
   const handleSearch = async () => {
-    // fetch weather data for the city
+    // Set loader to true to display it initially
+    setLoader(true);
+  
+    // Fetch weather data for the city
     try {
-      setLoader(true);
       const response = await fetch(
         `${api.baseURL}weather?q=${search}&units=metric&APPID=${api.key}`
       );
       const result = await response.json();
+  
       const icon = allIcons[result.weather[0].icon] || snow;
+  
       setWeatherData({
         city: result.name,
         temp: Math.floor(result.main.temp),
@@ -77,9 +81,11 @@ const Weather = () => {
       });
       setSearch("");
       console.log(result);
-      setLoader(false);
+  
+      // Hide loader after a timeout (e.g., 2 seconds)
+      setTimeout(() => setLoader(false), 1500);
     } catch (e) {
-      alert(`${ search } is not exist`, e);
+      alert(`${search} is not exist`, e);
     }
   };
 
