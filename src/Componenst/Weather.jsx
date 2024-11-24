@@ -79,11 +79,10 @@ const Weather = () => {
         ),
         sunset: new Date(result.sys.sunset * 1000).toLocaleTimeString("en-IN"),
       });
-      setSearch("");
       console.log(result);
-  
       // Hide loader after a timeout (e.g., 2 seconds)
       setTimeout(() => setLoader(false), 1500);
+      setSearch("");
     } catch (e) {
       alert(`${search} is not exist`, e);
     }
